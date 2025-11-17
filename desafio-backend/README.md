@@ -1,51 +1,38 @@
-# Desafio Backend - SEA Tecnologia (versão melhorada)
+ # Desafio SEA Tecnologia  Back-End
 
-Projeto Spring Boot 3 - API simples para gerenciamento de clientes (CRUD) com validações e tratamento de exceções.
+Este projeto foi desenvolvido para o processo seletivo da SEA Tecnologia, para a vaga de Estagiário de TI.  
+O objetivo era criar uma API simples usando Java com Spring Boot, com CRUD, autenticação básica e banco de dados H2.
 
-## Tecnologias
-- Java 17
-- Spring Boot 3.x
-- Spring Data JPA
-- H2 (banco em memória)
-- Spring Security (in-memory users)
-- Lombok
-- Validation (Jakarta Validation)
+Ainda estou aprendendo Spring Boot, então organizei o projeto da melhor forma possível com o que já sei e estudando a documentação.
 
-## Usuários de teste (in-memory)
-- admin / 123qwe!@# (role: ADMIN)
-- user / 123qwe@123 (role: USER)
+---
 
-> Observação: por facilidade e para o avaliador testar a API sem autenticação, as rotas `/clientes/**` estão **permitidas** no SecurityConfig. Se quiser, altero para exigir autenticação (ADMIN) nas operações de escrita.
+##   Tecnologias usadas
 
-## Endpoints principais
-- `GET /clientes` → lista todos os clientes
-- `GET /clientes/{id}` → busca por id
-- `POST /clientes` → cria novo cliente (validações)
-- `PUT /clientes/{id}` → atualiza cliente
-- `DELETE /clientes/{id}` → deleta cliente
+- Java 17  
+- Spring Boot  
+- Spring Web  
+- Spring Data JPA  
+- Spring Security  
+- H2 Database  
+- Lombok  
+- JWT (autenticação)
 
-## Regras de validação (simples)
-- `nome`: obrigatório, entre 3 e 100 caracteres
-- `cpf`: obrigatório, exatamente 11 caracteres (sem máscara)
+---
 
-## Rodando localmente (IntelliJ)
-1. Abra o projeto no IntelliJ (pasta raiz com `pom.xml`).
-2. Aguarde o Maven baixar as dependências.
-3. Execute a classe `com.desafio.backend.BackendApplication`.
-4. Acesse `http://localhost:8080/clientes`.
-5. Console H2: `http://localhost:8080/h2-console` (JDBC URL: `jdbc:h2:mem:testdb`)
+##  Sobre o projeto
 
-## Testes rápidos (curl)
-Criar cliente:
-```bash
-curl -X POST http://localhost:8080/clientes -H 'Content-Type: application/json' -d '{"nome":"Samuel William","cpf":"12345678900"}'
-```
+A API possui:
 
-Listar clientes:
-```bash
-curl http://localhost:8080/clientes
-```
+- Cadastro e login usando JWT  
+- CRUD de produtos  
+- Banco de dados em memória (H2)  
+- Validações básicas com Bean Validation  
 
-## Observações finais
-- O projeto está preparado para evoluir: adicionar DTOs adicionais, integração com ViaCEP, mascaramento de CPF, autenticação por JWT, testes unitários e dockerização.
-- Posso subir este projeto para um repositório GitHub com commits descritivos, se quiser.
+---
+
+##  Observações
+
+Esse é um dos meus primeiros projetos completos usando Spring Boot com segurança, JPA e validações.
+Fiz o melhor possível com o que estou aprendendo no momento e seguindo o que foi pedido no desafio.
+
